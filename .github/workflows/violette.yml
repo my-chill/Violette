@@ -36,8 +36,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+
+      - name: Setup Docker and Docker Compose
+        uses: docker-practice/actions-setup-docker@v1.1.1
+        with:
+          docker_version: 20.10
+          docker_compose: true
+
       - name: Deploy
         run: |
           cd ${{ secrets.DEPLOY_PATH }}
-          sed -i 's|image: .*|image: ghcr.io/${{ github.repository }}:latest|' docker-compose.yml
+          git pull
+          docker-compose build
           docker-compose up -d
