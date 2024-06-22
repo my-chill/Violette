@@ -32,12 +32,12 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: mychill
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v2
       - name: Deploy
         run: |
-          cd /home/hexca/Violette
+          cd ${{ secrets.DEPLOY_PATH }}
           sed -i 's|image: .*|image: ghcr.io/${{ github.repository }}:latest|' docker-compose.yml
           docker-compose up -d
