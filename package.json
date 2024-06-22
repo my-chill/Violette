@@ -1,0 +1,28 @@
+{
+  "name": "violette",
+  "version": "1.0.0",
+  "description": "Violette is a simple discord bot that can be used to execute commands on a Minecraft server.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "engines": {
+    "node": "16.9.0",
+    "npm": "7.22.0"
+  },
+  "author": "Hexca",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/rest": "^2.3.0",
+    "@discordjs/voice": "^0.17.0",
+    "discord-api-types": "^0.37.89",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "rcon-client": "^4.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
